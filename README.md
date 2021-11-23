@@ -26,3 +26,6 @@ Create a simple Android app for weather forecasting. It should show the actual w
 -	Repository should contains commit history instead of single one
 -	Select icons by yourself. App should contain non-default launch icon
 -	Link should be provided to interviewer.
+
+| ![Screenshot_20211123-213812](https://user-images.githubusercontent.com/61558546/143084283-e3810e1b-726a-45ed-92ae-b48c5582b7b7.png) | ![Screenshot_20211123-213815](https://user-images.githubusercontent.com/61558546/143084274-66aeb4ec-5721-430d-bf59-1405c76ef755.png) |
+|---|---|
