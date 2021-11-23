@@ -102,6 +102,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/info_1">
 
                 <TextView
+                    android:id="@+id/speed"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -111,6 +112,7 @@
                     tools:text="20 km/h" />
 
                 <TextView
+                    android:id="@+id/way"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

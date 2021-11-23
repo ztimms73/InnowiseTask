@@ -22,21 +22,21 @@
         android:padding="8dp">
 
         <TextView
-            android:id="@+id/time_TextView"
+            android:id="@+id/time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             tools:text="12:00" />
 
         <TextView
-            android:id="@+id/weather_info_TextView"
+            android:id="@+id/info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="Sunny" />
     </LinearLayout>
 
     <TextView
-        android:id="@+id/temp_TextView"
+        android:id="@+id/temp"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
