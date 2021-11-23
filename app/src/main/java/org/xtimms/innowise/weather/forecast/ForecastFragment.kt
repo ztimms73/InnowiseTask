@@ -5,26 +5,22 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.xtimms.innowise.weather.R
-import org.xtimms.innowise.weather.base.BaseFragment
-import org.xtimms.innowise.weather.databinding.FragmentForecastBinding
 import org.xtimms.innowise.weather.model.ForecastRecyclerItemView
 
-class ForecastFragment : BaseFragment<FragmentForecastBinding>() {
+class ForecastFragment : Fragment() {
 
-    override fun getTitle(): CharSequence? {
-        return context?.getString(R.string.forecast)
-    }
-
-    override fun onInflateView(
+    override fun onCreateView(
         inflater: LayoutInflater,
-        container: ViewGroup?
-    ) = FragmentForecastBinding.inflate(inflater, container, false)
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_forecast, container, false)
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
         val list =
             arguments?.getParcelableArrayList<ForecastRecyclerItemView>("ARRAY") as ArrayList<ForecastRecyclerItemView>
         val listID = arrayListOf<Int>()
@@ -35,7 +31,7 @@ class ForecastFragment : BaseFragment<FragmentForecastBinding>() {
             }
         }
 
-        val recyclerView = binding.recycler
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recycler)
         recyclerView.adapter = ForecastAdapter(
             this.requireContext(),
             list
@@ -45,7 +41,7 @@ class ForecastFragment : BaseFragment<FragmentForecastBinding>() {
         val layMan = recyclerView.layoutManager as LinearLayoutManager
         var firstItemPosition: Int
         var prevItemPos: Int = -1
-        val header = binding.header
+        val dayTextView = view.findViewById<TextView>(R.id.header)
 
         if ((list.size - 40) == 4) {
             recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
@@ -56,31 +52,31 @@ class ForecastFragment : BaseFragment<FragmentForecastBinding>() {
                     if (prevItemPos != firstItemPosition) {
                         when (firstItemPosition) {
                             0 -> {
-                                header.text = "Today"
+                                dayTextView.text = "Today"
                             }
                             (listID[0] - 1) -> {
-                                header.text = "Today"
+                                dayTextView.text = "Today"
                             }
                             (listID[0] + 1) -> {
-                                header.text = list[listID[0]].day
+                                dayTextView.text = list[listID[0]].day
                             }
                             (listID[1] - 1) -> {
-                                header.text = list[listID[0]].day
+                                dayTextView.text = list[listID[0]].day
                             }
                             (listID[1] + 1) -> {
-                                header.text = list[listID[1]].day
+                                dayTextView.text = list[listID[1]].day
                             }
                             (listID[2] - 1) -> {
-                                header.text = list[listID[1]].day
+                                dayTextView.text = list[listID[1]].day
                             }
                             (listID[2] + 1) -> {
-                                header.text = list[listID[2]].day
+                                dayTextView.text = list[listID[2]].day
                             }
                             (listID[3] - 1) -> {
-                                header.text = list[listID[2]].day
+                                dayTextView.text = list[listID[2]].day
                             }
                             (listID[3] + 1) -> {
-                                header.text = list[listID[3]].day
+                                dayTextView.text = list[listID[3]].day
                             }
                         }
                     }
@@ -96,37 +92,37 @@ class ForecastFragment : BaseFragment<FragmentForecastBinding>() {
                     if (prevItemPos != firstItemPosition) {
                         when (firstItemPosition) {
                             0 -> {
-                                header.text = "Today"
+                                dayTextView.text = "Today"
                             }
                             (listID[0] - 1) -> {
-                                header.text = "Today"
+                                dayTextView.text = "Today"
                             }
                             (listID[0] + 1) -> {
-                                header.text = list[listID[0]].day
+                                dayTextView.text = list[listID[0]].day
                             }
                             (listID[1] - 1) -> {
-                                header.text = list[listID[0]].day
+                                dayTextView.text = list[listID[0]].day
                             }
                             (listID[1] + 1) -> {
-                                header.text = list[listID[1]].day
+                                dayTextView.text = list[listID[1]].day
                             }
                             (listID[2] - 1) -> {
-                                header.text = list[listID[1]].day
+                                dayTextView.text = list[listID[1]].day
                             }
                             (listID[2] + 1) -> {
-                                header.text = list[listID[2]].day
+                                dayTextView.text = list[listID[2]].day
                             }
                             (listID[3] - 1) -> {
-                                header.text = list[listID[2]].day
+                                dayTextView.text = list[listID[2]].day
                             }
                             (listID[3] + 1) -> {
-                                header.text = list[listID[3]].day
+                                dayTextView.text = list[listID[3]].day
                             }
                             (listID[4] - 1) -> {
-                                header.text = list[listID[3]].day
+                                dayTextView.text = list[listID[3]].day
                             }
                             (listID[4] + 1) -> {
-                                header.text = list[listID[4]].day
+                                dayTextView.text = list[listID[4]].day
                             }
                         }
                     }
@@ -134,10 +130,7 @@ class ForecastFragment : BaseFragment<FragmentForecastBinding>() {
                 }
             })
         }
-    }
-
-    companion object {
-        fun newInstance() = ForecastFragment()
+        return view
     }
 
 }

@@ -69,7 +69,7 @@ class ForecastAdapter(
         @SuppressLint("SetTextI18n")
         fun bind(icon: Int, temp: Float, name: String, hour: Int) {
             Picasso.get().load(icon).error(R.drawable.ic_outline_weather_sunny_24).into(weathIcon)
-            var hourTime = "${hour}.00"
+            var hourTime = "${hour}:00"
             if (hourTime.length == 4) hourTime = "0$hourTime"
             timeTv.text = hourTime
             tempInfoTV.text = "${temp.roundToInt()}°"
