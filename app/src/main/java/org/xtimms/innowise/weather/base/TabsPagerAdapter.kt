@@ -20,28 +20,25 @@ class TabsPagerAdapter(
         when (position) {
             0 -> {
                 val fragment = TodayFragment()
-                val bundle = Bundle()
-
-                bundle.putInt("HUMIDITY", todayWeatherClass.humidity)
-                bundle.putFloat("SPEED", todayWeatherClass.speed)
-                bundle.putInt("DEG", todayWeatherClass.deg)
-                bundle.putFloat("TEMP", todayWeatherClass.temp)
-                bundle.putInt("SEA", todayWeatherClass.seaLevel)
-                bundle.putString("WEATHER_NAME", todayWeatherClass.weatherName)
-                bundle.putInt("ICON", getResIdIcon(todayWeatherClass.icon))
-                bundle.putString("COUNTRY_NAME", todayWeatherClass.countryName)
-                bundle.putInt("PRESSURE", todayWeatherClass.pressure)
-                bundle.putString("CITY_NAME", todayWeatherClass.cityName)
-
-                fragment.arguments = bundle
-
+                val args = Bundle()
+                args.putInt("HUMIDITY", todayWeatherClass.humidity)
+                args.putFloat("SPEED", todayWeatherClass.speed)
+                args.putInt("DEG", todayWeatherClass.deg)
+                args.putFloat("TEMP", todayWeatherClass.temp)
+                args.putInt("SEA", todayWeatherClass.seaLevel)
+                args.putString("WEATHER_NAME", todayWeatherClass.weatherName)
+                args.putInt("ICON", getResIdIcon(todayWeatherClass.icon))
+                args.putString("COUNTRY_NAME", todayWeatherClass.countryName)
+                args.putInt("PRESSURE", todayWeatherClass.pressure)
+                args.putString("CITY_NAME", todayWeatherClass.cityName)
+                fragment.arguments = args
                 return fragment
             }
             1 -> {
                 val fragment = ForecastFragment()
-                val bundle = Bundle()
-                bundle.putParcelableArrayList("ARRAY", arrayList)
-                fragment.arguments = bundle
+                val args = Bundle()
+                args.putParcelableArrayList("ARRAY", arrayList)
+                fragment.arguments = args
                 return fragment
             }
         }
@@ -60,12 +57,64 @@ class TabsPagerAdapter(
         return 2
     }
 
+    // https://openweathermap.org/weather-conditions
     private fun getResIdIcon(name: String) = when (name) {
-        "04d" -> {
+        "01d" -> {
             R.drawable.ic_outline_weather_sunny_24
         }
+        "01n" -> {
+            R.drawable.ic_outline_nightlight_24
+        }
+        "02d" -> {
+            R.drawable.ic_outline_weather_sunny_24
+        }
+        "02n" -> {
+            R.drawable.ic_outline_nightlight_24
+        }
+        "03d" -> {
+            R.drawable.ic_partly_cloudy_24
+        }
+        "03n" -> {
+            R.drawable.ic_partly_cloudy_night_24
+        }
+        "04d" -> {
+            R.drawable.ic_outline_cloud_24
+        }
+        "04n" -> {
+            R.drawable.ic_outline_cloud_24
+        }
+        "09d" -> {
+            R.drawable.ic_shower_rain_24
+        }
+        "09n" -> {
+            R.drawable.ic_shower_rain_24
+        }
+        "10d" -> {
+            R.drawable.ic_rain_24
+        }
+        "10n" -> {
+            R.drawable.ic_rain_24
+        }
+        "11d" -> {
+            R.drawable.ic_thunderstorm_24
+        }
+        "11n" -> {
+            R.drawable.ic_thunderstorm_24
+        }
+        "13d" -> {
+            R.drawable.ic_snowflake_24
+        }
+        "13n" -> {
+            R.drawable.ic_snowflake_24
+        }
+        "50d" -> {
+            R.drawable.ic_fog_24
+        }
+        "50n" -> {
+            R.drawable.ic_fog_24
+        }
         else -> {
-            2
+            R.drawable.ic_question_24
         }
     }
 

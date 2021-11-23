@@ -1,7 +1,6 @@
 package org.xtimms.innowise.weather.forecast
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +14,6 @@ import org.xtimms.innowise.weather.model.ForecastRecyclerItemView
 import kotlin.math.roundToInt
 
 class ForecastAdapter(
-    val context: Context,
     private val list: ArrayList<ForecastRecyclerItemView>
 ) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -38,10 +36,43 @@ class ForecastAdapter(
             ForecastRecyclerItemView.WEATHER_TYPE -> {
                 val icon = when (item.icon) {
                     "04d" -> {
+                        R.drawable.ic_outline_cloud_24
+                    }
+                    "04n" -> {
+                        R.drawable.ic_outline_cloud_24
+                    }
+                    "01d" -> {
                         R.drawable.ic_outline_weather_sunny_24
                     }
+                    "01n" -> {
+                        R.drawable.ic_outline_nightlight_24
+                    }
+                    "02d" -> {
+                        R.drawable.ic_outline_weather_sunny_24
+                    }
+                    "02n" -> {
+                        R.drawable.ic_outline_nightlight_24
+                    }
+                    "10d" -> {
+                        R.drawable.ic_rain_24
+                    }
+                    "10n" -> {
+                        R.drawable.ic_rain_24
+                    }
+                    "13d" -> {
+                        R.drawable.ic_snowflake_24
+                    }
+                    "13n" -> {
+                        R.drawable.ic_snowflake_24
+                    }
+                    "03d" -> {
+                        R.drawable.ic_partly_cloudy_24
+                    }
+                    "03n" -> {
+                        R.drawable.ic_partly_cloudy_night_24
+                    }
                     else -> {
-                        2
+                        R.drawable.ic_question_24
                     }
                 }
                 (holder as WeatherViewHolder).bind(icon, item.temp, item.name, item.hour)
@@ -68,7 +99,7 @@ class ForecastAdapter(
 
         @SuppressLint("SetTextI18n")
         fun bind(icon: Int, temp: Float, name: String, hour: Int) {
-            Picasso.get().load(icon).error(R.drawable.ic_outline_weather_sunny_24).into(weathIcon)
+            Picasso.get().load(icon).error(R.drawable.ic_question_24).into(weathIcon)
             var hourTime = "${hour}:00"
             if (hourTime.length == 4) hourTime = "0$hourTime"
             timeTv.text = hourTime

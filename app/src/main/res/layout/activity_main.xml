@@ -8,13 +8,19 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"/>
+            app:tabIndicatorColor="@android:color/white"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -26,12 +32,10 @@
 
     <ProgressBar
         android:id="@+id/progress"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:indeterminate="true"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:layout_marginTop="?attr/actionBarSize" />
+        android:layout_gravity="center" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -60,19 +64,11 @@
 
         <Button
             android:id="@+id/retry_button"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/retry" />
 
     </LinearLayout>
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabs"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:elevation="4dp"
-        app:tabIndicator="@null" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

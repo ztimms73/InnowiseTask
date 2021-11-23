@@ -37,9 +37,9 @@ class TodayFragment : Fragment(), IToday {
                 action = Intent.ACTION_SEND
                 putExtra(
                     Intent.EXTRA_TEXT,
-                    "Hello, right now i am in ${arguments!!.getString("CITY_NAME")} and temperature here is ${
+                    "In ${arguments!!.getString("CITY_NAME")} temperature is ${
                         arguments!!.getFloat("TEMP").roundToInt()
-                    }°C, we have ${arguments!!.getString("WEATHER_NAME")}"
+                    } °C, ${arguments!!.getString("WEATHER_NAME")}"
                 )
                 type = "text/plain"
             }
@@ -58,18 +58,18 @@ class TodayFragment : Fragment(), IToday {
     ) {
         val imageView = todayFragView.findViewById(R.id.icon) as ImageView
         todayFragView.findViewById<TextView>(R.id.rain)?.text =
-            "${arguments!!.getInt("HUMIDITY")}%"
+            "${arguments!!.getInt("HUMIDITY")} %"
         todayFragView.findViewById<TextView>(R.id.speed)?.text = "$speed km/h"
         todayFragView.findViewById<TextView>(R.id.pressure)?.text =
             "${arguments!!.getInt("PRESSURE")} hPa"
         todayFragView.findViewById<TextView>(R.id.way)?.text = deg
         Picasso.get().load(arguments!!.getInt("ICON"))
-            .error(R.drawable.ic_baseline_error_outline_24).into(imageView)
+            .error(R.drawable.ic_question_24).into(imageView)
         todayFragView.findViewById<TextView>(R.id.precipitation)?.text =
             "${arguments!!.getInt("SEA")}"
         todayFragView.findViewById<TextView>(R.id.temp_status)?.text = "${
             arguments!!.getFloat("TEMP").roundToInt()
-        }°C | ${arguments!!.getString("WEATHER_NAME")}"
+        } °C | ${arguments!!.getString("WEATHER_NAME")}"
         todayFragView.findViewById<TextView>(R.id.city)?.text =
             "${arguments!!.getString("CITY_NAME")}, ${arguments!!.getString("COUNTRY_NAME")}"
     }

@@ -29,6 +29,7 @@
                 android:id="@+id/icon"
                 android:layout_width="98dp"
                 android:layout_height="98dp"
+                android:layout_margin="4dp"
                 android:src="@drawable/ic_outline_weather_sunny_24"
                 app:tint="?attr/colorPrimary" />
 
@@ -36,14 +37,16 @@
                 android:id="@+id/city"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:layout_margin="4dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
                 tools:text="Polotsk" />
 
             <TextView
                 android:id="@+id/temp_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?attr/textAppearanceHeadline5"
+                android:layout_margin="4dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textColor="?attr/colorPrimary"
                 tools:text="22°C | Sunny" />
 
@@ -68,7 +71,7 @@
                     android:layout_weight="1"
                     android:drawableTop="@drawable/ic_outline_weather_pouring_24"
                     android:textAlignment="center"
-                    android:textAppearance="?attr/textAppearanceBody1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     tools:text="57%" />
 
                 <TextView
@@ -78,7 +81,7 @@
                     android:layout_weight="1"
                     android:drawableTop="@drawable/ic_outline_water_24"
                     android:textAlignment="center"
-                    android:textAppearance="?attr/textAppearanceBody1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     tools:text="1.0 mm" />
 
                 <TextView
@@ -88,7 +91,7 @@
                     android:layout_weight="1"
                     android:drawableTop="@drawable/ic_baseline_thermometer_lines_24"
                     android:textAlignment="center"
-                    android:textAppearance="?attr/textAppearanceBody1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     tools:text="1019 hPa" />
 
             </LinearLayout>
@@ -108,7 +111,7 @@
                     android:layout_weight="1"
                     android:drawableTop="@drawable/ic_baseline_weather_windy_24"
                     android:textAlignment="center"
-                    android:textAppearance="?attr/textAppearanceBody1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     tools:text="20 km/h" />
 
                 <TextView
@@ -118,7 +121,7 @@
                     android:layout_weight="1"
                     android:drawableTop="@drawable/ic_outline_compass_24"
                     android:textAlignment="center"
-                    android:textAppearance="?attr/textAppearanceBody1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     tools:text="SE" />
 
             </LinearLayout>
@@ -127,7 +130,7 @@
 
         <Button
             android:id="@+id/share"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    android:padding="8dp"
-    android:textAppearance="?attr/textAppearanceBody1"
+    android:padding="16dp"
+    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+    android:textAllCaps="true"
+    android:textColor="?android:attr/colorControlNormal"
     android:textStyle="bold"
     tools:text="Today" />

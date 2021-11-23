@@ -82,11 +82,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), IMainView {
             TabsPagerAdapter(
                 supportFragmentManager, todayWeather, items
             )
-
         viewPager.adapter = viewPagerAdapter
         tabLayout.setupWithViewPager(viewPager)
-        tabLayout.getTabAt(0)?.setIcon(R.drawable.ic_outline_today_24)
-        tabLayout.getTabAt(1)?.setIcon(R.drawable.ic_outline_forecast_24)
     }
 
     override fun init() {

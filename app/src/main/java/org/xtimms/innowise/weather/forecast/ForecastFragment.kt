@@ -33,7 +33,6 @@ class ForecastFragment : Fragment() {
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.recycler)
         recyclerView.adapter = ForecastAdapter(
-            this.requireContext(),
             list
         )
         recyclerView.layoutManager = LinearLayoutManager(activity)
