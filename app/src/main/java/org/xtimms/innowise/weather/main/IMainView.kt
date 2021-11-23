@@ -1,4 +1,4 @@
-package com.example.innowiseweatherapplication.view
+package org.xtimms.innowise.weather.main
 
 import org.xtimms.innowise.weather.model.ForecastRecyclerItemView
 import org.xtimms.innowise.weather.model.TodayWeather

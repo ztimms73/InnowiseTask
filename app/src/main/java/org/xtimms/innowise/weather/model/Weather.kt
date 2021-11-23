@@ -35,21 +35,9 @@ data class Weather(
         @Expose
         var weather: List<Weather> = ArrayList(),
 
-        @SerializedName("clouds")
-        @Expose
-        var clouds: Cloud? = null,
-
         @SerializedName("wind")
         @Expose
         var wind: Wind? = null,
-
-        @SerializedName("rain")
-        @Expose
-        var rain: Rain? = null,
-
-        @SerializedName("sys")
-        @Expose
-        var sys: Sys? = null,
 
         @SerializedName("dt_txt")
         @Expose
@@ -64,10 +52,6 @@ data class Weather(
             @SerializedName("main")
             @Expose
             var main = ""
-
-            @SerializedName("description")
-            @Expose
-            var description = ""
 
             @SerializedName("icon")
             @Expose
@@ -143,12 +127,6 @@ data class Weather(
             }
         }
 
-        class Cloud {
-            @SerializedName("all")
-            @Expose
-            var all = 0
-        }
-
         class Wind {
             @SerializedName("speed")
             @Expose
@@ -158,18 +136,6 @@ data class Weather(
             @Expose
             var deg = 0
 
-        }
-
-        class Rain {
-            @SerializedName("1h")
-            @Expose
-            var oneHour = 0f
-        }
-
-        class Sys {
-            @SerializedName("pod")
-            @Expose
-            var pod = ""
         }
 
     }

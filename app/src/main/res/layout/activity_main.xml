@@ -59,7 +59,7 @@
             android:padding="8dp"
             android:textAlignment="center"
             android:visibility="gone"
-            tools:text="An error occured"
+            tools:text="An error occurred"
             tools:visibility="visible" />
 
         <Button

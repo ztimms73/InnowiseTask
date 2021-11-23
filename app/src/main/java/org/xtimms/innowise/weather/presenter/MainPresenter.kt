@@ -1,10 +1,10 @@
 package org.xtimms.innowise.weather.presenter
 
 import android.annotation.SuppressLint
-import com.example.innowiseweatherapplication.view.IMainView
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import org.xtimms.innowise.weather.main.IMainView
 import org.xtimms.innowise.weather.model.ForecastRecyclerItemView
 import org.xtimms.innowise.weather.model.MainModel
 import org.xtimms.innowise.weather.model.TodayWeather

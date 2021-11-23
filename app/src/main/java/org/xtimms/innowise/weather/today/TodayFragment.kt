@@ -11,20 +11,19 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.squareup.picasso.Picasso
 import org.xtimms.innowise.weather.R
-import org.xtimms.innowise.weather.databinding.FragmentTodayBinding
 import org.xtimms.innowise.weather.presenter.TodayPresenter
 import kotlin.math.roundToInt
 
 class TodayFragment : Fragment(), IToday {
 
-    lateinit var todayWeatherPresenter: TodayPresenter
-    lateinit var todayFragView: View
+    private lateinit var todayWeatherPresenter: TodayPresenter
+    private lateinit var todayFragView: View
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         todayFragView = inflater.inflate(R.layout.fragment_today, container, false)
         todayWeatherPresenter = TodayPresenter(this)
         init(todayFragView)

@@ -92,7 +92,7 @@ class ForecastAdapter(
         LayoutInflater.from(context).inflate(layoutRes, this, attachToRoot)
 
     class WeatherViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val weathIcon = view.findViewById(R.id.icon) as ImageView
+        private val weathIcon = view.findViewById(R.id.icon) as ImageView
         private val timeTv = view.findViewById(R.id.time) as TextView
         private val weatherInfoTv = view.findViewById(R.id.info) as TextView
         private var tempInfoTV = view.findViewById(R.id.temp) as TextView

@@ -8,7 +8,6 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.viewpager.widget.ViewPager
-import com.example.innowiseweatherapplication.view.IMainView
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.material.tabs.TabLayout
@@ -26,7 +25,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), IMainView {
     private val permissionId = 42
 
     private lateinit var viewPager: ViewPager
-    lateinit var tabLayout: TabLayout
+    private lateinit var tabLayout: TabLayout
 
     private lateinit var mFusedLocationClient: FusedLocationProviderClient
     private lateinit var mainPresenter: MainPresenter

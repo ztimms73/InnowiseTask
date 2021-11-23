@@ -4,7 +4,7 @@ import android.content.Intent
 import org.xtimms.innowise.weather.today.IToday
 import kotlin.math.roundToInt
 
-class TodayPresenter(val view: IToday) : ITodayPresenter {
+class TodayPresenter(private val view: IToday) : ITodayPresenter {
 
     override fun sendInfoBtnClicked(string: String): Intent {
         val sendIntent: Intent = Intent().apply {

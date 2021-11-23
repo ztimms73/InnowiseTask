@@ -45,7 +45,7 @@ class TabsPagerAdapter(
         return TodayFragment()
     }
 
-    override fun getPageTitle(position: Int): CharSequence? {
+    override fun getPageTitle(position: Int): CharSequence {
         when (position) {
             0 -> return "Today"
             1 -> return "Forecast"

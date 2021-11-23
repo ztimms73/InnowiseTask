@@ -33,10 +33,12 @@ class Utils(private val context: Context) {
         mLocationRequest.fastestInterval = 0
         mLocationRequest.numUpdates = 1
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(context)
-        mFusedLocationClient.requestLocationUpdates(
-            mLocationRequest, mLocationCallback,
-            Looper.myLooper()
-        )
+        if(!checkPermission()) {
+            mFusedLocationClient.requestLocationUpdates(
+                mLocationRequest, mLocationCallback,
+                Looper.myLooper()
+            )
+        }
     }
 
     private val mLocationCallback = object : LocationCallback() {
