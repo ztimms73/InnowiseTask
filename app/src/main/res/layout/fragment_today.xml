@@ -75,14 +75,14 @@
                     tools:text="57%" />
 
                 <TextView
-                    android:id="@+id/precipitation"
+                    android:id="@+id/feels_like"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:drawableTop="@drawable/ic_outline_water_24"
+                    android:layout_gravity="center"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    tools:text="1.0 mm" />
+                    tools:text="Feels like ..." />
 
                 <TextView
                     android:id="@+id/pressure"

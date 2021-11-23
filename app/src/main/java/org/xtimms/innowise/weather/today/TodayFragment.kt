@@ -65,8 +65,8 @@ class TodayFragment : Fragment(), IToday {
         todayFragView.findViewById<TextView>(R.id.way)?.text = deg
         Picasso.get().load(arguments!!.getInt("ICON"))
             .error(R.drawable.ic_question_24).into(imageView)
-        todayFragView.findViewById<TextView>(R.id.precipitation)?.text =
-            "${arguments!!.getInt("SEA")}"
+        todayFragView.findViewById<TextView>(R.id.feels_like)?.text =
+            "Feels like ${arguments!!.getFloat("FEELS_LIKE").roundToInt()} °C"
         todayFragView.findViewById<TextView>(R.id.temp_status)?.text = "${
             arguments!!.getFloat("TEMP").roundToInt()
         } °C | ${arguments!!.getString("WEATHER_NAME")}"

@@ -43,6 +43,10 @@ data class Weather(
         @Expose
         var wind: Wind? = null,
 
+        @SerializedName("rain")
+        @Expose
+        var rain: Rain? = null,
+
         @SerializedName("sys")
         @Expose
         var sys: Sys? = null,
@@ -86,9 +90,9 @@ data class Weather(
             @SerializedName("pressure")
             @Expose
             var pressure: Int = 0,
-            @SerializedName("sea_level")
+            @SerializedName("1h")
             @Expose
-            var seaLevel: Int = 0,
+            var rain: Float = 0f,
             @SerializedName("grnd_level")
             @Expose
             var grndLevel: Int = 0,
@@ -106,7 +110,7 @@ data class Weather(
                 parcel.readFloat(),
                 parcel.readFloat(),
                 parcel.readInt(),
-                parcel.readInt(),
+                parcel.readFloat(),
                 parcel.readInt(),
                 parcel.readInt(),
                 parcel.readFloat()
@@ -118,7 +122,7 @@ data class Weather(
                 parcel.writeFloat(tempMin)
                 parcel.writeFloat(tempMax)
                 parcel.writeInt(pressure)
-                parcel.writeInt(seaLevel)
+                parcel.writeFloat(rain)
                 parcel.writeInt(grndLevel)
                 parcel.writeInt(humidity)
                 parcel.writeFloat(tempKf)
@@ -154,6 +158,12 @@ data class Weather(
             @Expose
             var deg = 0
 
+        }
+
+        class Rain {
+            @SerializedName("1h")
+            @Expose
+            var oneHour = 0f
         }
 
         class Sys {

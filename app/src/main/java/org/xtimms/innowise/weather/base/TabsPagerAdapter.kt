@@ -25,7 +25,7 @@ class TabsPagerAdapter(
                 args.putFloat("SPEED", todayWeatherClass.speed)
                 args.putInt("DEG", todayWeatherClass.deg)
                 args.putFloat("TEMP", todayWeatherClass.temp)
-                args.putInt("SEA", todayWeatherClass.seaLevel)
+                args.putFloat("FEELS_LIKE", todayWeatherClass.feelsLike)
                 args.putString("WEATHER_NAME", todayWeatherClass.weatherName)
                 args.putInt("ICON", getResIdIcon(todayWeatherClass.icon))
                 args.putString("COUNTRY_NAME", todayWeatherClass.countryName)

@@ -47,7 +47,7 @@ class MainPresenter(private var view: IMainView?, private val utils: Utils) :
                     it.list!![0].wind!!.speed,
                     it.list!![0].wind!!.deg,
                     it.list!![0].main!!.temp - 273,
-                    it.list!![0].main!!.seaLevel,
+                    it.list!![0].main!!.feelsLike - 273,
                     it.list!![0].weather[0].main,
                     it.list!![0].weather[0].icon,
                     it.city!!.country,
