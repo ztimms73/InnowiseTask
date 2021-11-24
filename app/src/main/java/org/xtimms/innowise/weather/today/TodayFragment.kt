@@ -38,7 +38,7 @@ class TodayFragment : Fragment(), IToday {
                     Intent.EXTRA_TEXT,
                     "In ${arguments!!.getString("CITY_NAME")} temperature is ${
                         arguments!!.getFloat("TEMP").roundToInt()
-                    } °C, ${arguments!!.getString("WEATHER_NAME")}"
+                    }° C, ${arguments!!.getString("WEATHER_NAME")}"
                 )
                 type = "text/plain"
             }
@@ -68,7 +68,7 @@ class TodayFragment : Fragment(), IToday {
             "Feels like ${arguments!!.getFloat("FEELS_LIKE").roundToInt()} °C"
         todayFragView.findViewById<TextView>(R.id.temp_status)?.text = "${
             arguments!!.getFloat("TEMP").roundToInt()
-        } °C | ${arguments!!.getString("WEATHER_NAME")}"
+        }° C | ${arguments!!.getString("WEATHER_NAME")}"
         todayFragView.findViewById<TextView>(R.id.city)?.text =
             "${arguments!!.getString("CITY_NAME")}, ${arguments!!.getString("COUNTRY_NAME")}"
     }

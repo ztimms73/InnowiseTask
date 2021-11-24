@@ -35,12 +35,6 @@ class ForecastAdapter(
             ForecastRecyclerItemView.HEADER_TYPE -> (holder as HeaderViewHolder).tv.text = item.day
             ForecastRecyclerItemView.WEATHER_TYPE -> {
                 val icon = when (item.icon) {
-                    "04d" -> {
-                        R.drawable.ic_outline_cloud_24
-                    }
-                    "04n" -> {
-                        R.drawable.ic_outline_cloud_24
-                    }
                     "01d" -> {
                         R.drawable.ic_outline_weather_sunny_24
                     }
@@ -53,11 +47,35 @@ class ForecastAdapter(
                     "02n" -> {
                         R.drawable.ic_outline_nightlight_24
                     }
+                    "03d" -> {
+                        R.drawable.ic_partly_cloudy_24
+                    }
+                    "03n" -> {
+                        R.drawable.ic_partly_cloudy_night_24
+                    }
+                    "04d" -> {
+                        R.drawable.ic_outline_cloud_24
+                    }
+                    "04n" -> {
+                        R.drawable.ic_outline_cloud_24
+                    }
+                    "09d" -> {
+                        R.drawable.ic_shower_rain_24
+                    }
+                    "09n" -> {
+                        R.drawable.ic_shower_rain_24
+                    }
                     "10d" -> {
                         R.drawable.ic_rain_24
                     }
                     "10n" -> {
                         R.drawable.ic_rain_24
+                    }
+                    "11d" -> {
+                        R.drawable.ic_thunderstorm_24
+                    }
+                    "11n" -> {
+                        R.drawable.ic_thunderstorm_24
                     }
                     "13d" -> {
                         R.drawable.ic_snowflake_24
@@ -65,11 +83,11 @@ class ForecastAdapter(
                     "13n" -> {
                         R.drawable.ic_snowflake_24
                     }
-                    "03d" -> {
-                        R.drawable.ic_partly_cloudy_24
+                    "50d" -> {
+                        R.drawable.ic_fog_24
                     }
-                    "03n" -> {
-                        R.drawable.ic_partly_cloudy_night_24
+                    "50n" -> {
+                        R.drawable.ic_fog_24
                     }
                     else -> {
                         R.drawable.ic_question_24
