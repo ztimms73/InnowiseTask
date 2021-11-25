@@ -2,7 +2,6 @@ package org.xtimms.innowise.weather.utils
 
 import android.Manifest
 import android.content.Context
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Address
 import android.location.Geocoder
@@ -12,9 +11,7 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
 import android.os.Looper
-import android.provider.Settings
 import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat.startActivity
 import com.google.android.gms.location.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -116,11 +113,6 @@ class Utils(private val context: Context) {
     } else {
         mLocation = location
         false
-    }
-
-    fun createNewIntent() {
-        val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
-        startActivity(context, intent, null)
     }
 
 

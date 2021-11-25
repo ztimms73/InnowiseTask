@@ -1,6 +1,7 @@
 package org.xtimms.innowise.weather.presenter
 
 import android.annotation.SuppressLint
+import android.util.Log
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -86,7 +87,8 @@ class MainPresenter(private var view: IMainView?, private val utils: Utils) :
                         }
                     }
                 } else {
-                    utils.createNewIntent()
+                    view!!.hideProgress()
+                    view!!.showError("Enable location detection on your device")
                 }
             } else {
                 view!!.hideProgress()
