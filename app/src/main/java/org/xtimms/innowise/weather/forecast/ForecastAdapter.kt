@@ -121,7 +121,7 @@ class ForecastAdapter(
             var hourTime = "${hour}:00"
             if (hourTime.length == 4) hourTime = "0$hourTime"
             timeTv.text = hourTime
-            tempInfoTV.text = "${temp.roundToInt()}°С"
+            tempInfoTV.text = "${temp.roundToInt()}°"
             weatherInfoTv.text = name
         }
     }
