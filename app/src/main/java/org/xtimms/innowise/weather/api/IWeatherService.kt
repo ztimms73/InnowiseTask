@@ -8,7 +8,9 @@ import retrofit2.http.Query
 
 interface IWeatherService {
 
-    @GET("forecast?appid=${BuildConfig.API_KEY}")
-    fun getWeather(@Query("q") city: String): Observable<Weather>
+    @GET("data/2.5/forecast?appid=${BuildConfig.API_KEY}")
+    fun getWeather(
+        @Query("q") city: String,
+    ): Observable<Weather>
 
 }
